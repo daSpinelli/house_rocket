@@ -1,0 +1,6 @@
+As perguntas do CEO
+1. Quantas casas estão disponíveis para compra
+2. Quantos atributos as casas possuem?
+3. Quais são os atributos
+4. Qual a casa mais cara do portfólio?
+5. Qual a casa com maior número de quartos?
