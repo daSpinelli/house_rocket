@@ -64,7 +64,7 @@ Então para este projeto o escopo abrange:
 | lat | Latitude |
 | long | Longitude |
 | sqft_living15 | Tamanho em pés do espaço interior do imóvel dos 15 vizinhos próximos |
-| sqft_lot15 | Tamanho em pés do lote dos 15 vizinhos próximos |
+| sqft_lot15 | Tamanho em pés do lote dos 15 vizinhos próximos | 
 
 **Derivação de features para facilitar a análise**
 
@@ -99,15 +99,34 @@ Então para este projeto o escopo abrange:
 
 ### Mapa mental de hipóteses
 
-IMAGEM
+![Screenshot from 2022-04-30 12-20-13](https://user-images.githubusercontent.com/68928802/166111645-92bc6958-8ad7-44b2-90e3-c7e38159f55a.png)
+
+### 2.2. Hipóteses de negócio
+
+**H1.** Propriedades com vista para o lago são mais caras  
+**H2.** ***Propriedades com mais quartos são mais caras***  
+**H3.** ***O preço das propriedades aumenta conforme o tamanho interno da propriedade aumenta***  
+**H4.** Propriedades térreas são mais caras  
+**H5.** Propriedades em más condições são mais baratas  
+**H6.** Propriedades de alto padrão são mais caras  
+**H7.** Propriedades de alto padrão mesmo em más condições são mais caras do que propriedades de baixo padrão em boas condições  
+**H8.** ***Propriedades com vista para o lago com qualquer qualidade são mais caras do que propriedades com vista da melhor qualidade***  
+**H9.** Propriedades de alto padrão com vista para o lago e de boa qualidade e em boas condições são raras, compõem apenas 10% da base  
+**H10.** O preço das casas diminui com a idade  
+**H11.** Propriedades com vista para o lago são vendidas no verão por 15% a mais no valor médio de venda do que em outras estações  
+**H12.** No geral, a época do ano não gera mais de 5% de variação no preço médio de venda entre as estações
 
 ### 4.1. Análise univariada
 
 Preço de venda
 
+![Screenshot from 2022-04-30 12-21-53](https://user-images.githubusercontent.com/68928802/166111862-c5c1d190-7f0a-4bc9-bafd-224d7bc374c5.png)
+
 
 Plot de todas as features numéricas para checar a distribuição
 
+![Screenshot from 2022-04-30 12-24-04](https://user-images.githubusercontent.com/68928802/166111864-a6653f10-d6a8-4e58-8878-d4c199030941.png)
+![Screenshot from 2022-04-30 12-24-37](https://user-images.githubusercontent.com/68928802/166111870-3a00ebca-9ec1-4ad9-b70f-b60d783ac8d7.png)
 
 
 É possível notar que o dataset está bem desbalanceado, apenas uma feature (sqft_living15) se aproxima de uma distribuição normal. 
@@ -125,7 +144,7 @@ Além disso, algumas features numéricas se comportam como variáveis categóric
 
 Não necessariamente. O maior preço médio de venda está nas propriedades de 8, 7 e 9 quartos. Enquanto na base existem propriedades de 10, 11 e até 33 quartos com o valor médio de venda menor do que o primeiro grupo.
 
-IMAGEM
+![Screenshot from 2022-04-30 12-47-38](https://user-images.githubusercontent.com/68928802/166112656-95f822ba-1df1-42f0-ad0f-304c60a81884.png)
 
 #### H3. O preço das propriedades aumenta conforme o tamanho interno da propriedade aumenta.
 
@@ -133,7 +152,9 @@ IMAGEM
 
 A tendência mostra um correlação relevante e positiva entre o preço de venda e tamanho interno da propriedade. Então, quando o tamanho interno de uma propriedade aumenta, o preço de venda também aumenta.
 
-IMAGEM
+![Screenshot from 2022-04-30 12-52-43](https://user-images.githubusercontent.com/68928802/166112840-76bfab63-6ae7-42ae-a74b-fd75a28476a4.png)
+![Screenshot from 2022-04-30 12-53-31](https://user-images.githubusercontent.com/68928802/166112866-7bd8fe84-a9e1-416c-92b2-496108e95e12.png)
+
 
 #### H8. Propriedades com vista para o lago com qualquer qualidade são mais caras do que propriedades com vista da melhor qualidade
 
@@ -141,7 +162,7 @@ IMAGEM
 
 As propriedades com vista para o lago mas com má qualidade de vista não são mais caras, na média, do que as propriedades sem vista para o lago com qualidade de vista regular ou boa.
 
-IMAGEM
+![Screenshot from 2022-04-30 12-57-09](https://user-images.githubusercontent.com/68928802/166112990-ca0eef9c-e1d2-438b-a25a-22deaab13f40.png)
 
 ### 5.2. Rescala
 
@@ -170,7 +191,7 @@ Features para rescala com **minmax**:
 
 ### 6.1. Divisão dos dados em treino e teste
 
-IMAGEM
+![Screenshot from 2022-04-30 12-57-42](https://user-images.githubusercontent.com/68928802/166113019-5d0ca8f4-a3d2-4ee7-85cd-72c57787701e.png)
 
 ### 6.3. Seleção manual de features
 
@@ -189,11 +210,11 @@ Features descartadas:
 
 **Performance em único treinamento**
 
-IMAGEM
+![Screenshot from 2022-04-30 12-58-52](https://user-images.githubusercontent.com/68928802/166113195-50017838-d977-450b-9776-f63816e3a576.png)
 
 **Performance com validação cruzada**
 
-IMAGEM
+![Screenshot from 2022-04-30 12-59-01](https://user-images.githubusercontent.com/68928802/166113201-cd986437-3b87-42b3-a48a-f009255af872.png)
 
 Métricas utilizadas:
 - **MAE** (mean absolute error) - Erro médio absoluto
@@ -218,17 +239,13 @@ Melhores parâmetros:
 
 #### 8.2. Modelo Final
 
-IMAGEM
+![Screenshot from 2022-04-30 12-59-26](https://user-images.githubusercontent.com/68928802/166113207-6cc8a047-f4b2-43ca-93ec-8c0fbe1120b6.png)
 
 ### 9.0. Tradução do Erro
 
 #### 9.1. Performance de Negócio
 
-IMAGEM
-
-Dispersão dos erros
-
-IMAGEM
+![Screenshot from 2022-04-30 12-59-47](https://user-images.githubusercontent.com/68928802/166113209-7a886a6b-c9f2-41c5-ba3d-72d85f4e7185.png)
 
 #### 9.3. Performance do Modelo
 
@@ -236,23 +253,19 @@ Comparação dos preços previstos com o realizado e o baseline.
 
 É possível notar que o modelo errou mais nos maiores valores. Preciso voltar nestes pontos no próximo ciclo.
 
-IMAGEM
-
-Distribuição dos erros
-
-IMAGEM
+![Screenshot from 2022-04-30 13-09-56](https://user-images.githubusercontent.com/68928802/166113574-41f0d1f4-c2ee-4494-b8d8-2cf44cc0731d.png)
 
 Disperção dos erros
 
-IMAGEM
+![Screenshot from 2022-04-30 13-13-12](https://user-images.githubusercontent.com/68928802/166113577-d3f03ca4-f68b-4568-a229-0cc450096562.png)
 
 ## Conclusão e Próximos Passos
 
 ### Conclusão
 
-IMAGEM
+![Screenshot from 2022-04-30 13-14-53](https://user-images.githubusercontent.com/68928802/166113579-9f72527e-5572-465c-aac2-21c6b34ad48b.png)
 
-O que podemos notar olhando a tabela acima é que os preços previstos neste primeiro ciclo estão mais próximos do preço real do que a média utilizada. 
+O que podemos notar olhando a tabela de variação percentual acima é que os preços previstos neste primeiro ciclo estão mais próximos do preço real do que a média utilizada. 
 
 Sendo assim, a probabilidade de venda é muito maior utilizando o preço previsto do que a média, onde em alguns casos o preço sugerido seria 3 vezes mais alto do que valor do imóvel.
 
@@ -264,3 +277,7 @@ Sendo assim, a probabilidade de venda é muito maior utilizando o preço previst
 - Tentar uma nova reescala dos dados
 - Encontrar os novos hiperparâmetros para o modelo
 - Retornar com a apresentação ao time de negócios
+
+# Obrigado! 
+
+### E qualquer sugestão ou comentário, entre em [contato](https://www.linkedin.com/in/dennydaspinelli/) comigo.
