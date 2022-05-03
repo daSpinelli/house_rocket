@@ -1,3 +1,6 @@
+<img src="https://user-images.githubusercontent.com/68928802/166509358-361ff67f-f4a4-47cd-a239-aa6d49bb939a.png" width="1280" height="450"/>
+
+
 # Projeto House Rocket
 ___
 ### Este projeto tem como objetivo gerar insights através de análise exploratória de dados
@@ -142,7 +145,7 @@ Além disso, algumas features numéricas se comportam como variáveis categóric
 
 **FALSE**
 
-Não necessariamente. O maior preço médio de venda está nas propriedades de 8, 7 e 9 quartos. Enquanto na base existem propriedades de 10, 11 e até 33 quartos com o valor médio de venda menor do que o primeiro grupo.
+Não necessariamente. O maior preço médio de venda está nas propriedades de 8, 7 e 9 quartos respectivamente. Enquanto na base existem propriedades de 10, 11 e até 33 quartos com o valor médio de venda menor do que o primeiro grupo.
 
 ![Screenshot from 2022-04-30 12-47-38](https://user-images.githubusercontent.com/68928802/166112656-95f822ba-1df1-42f0-ad0f-304c60a81884.png)
 
@@ -263,11 +266,20 @@ Disperção dos erros
 
 ### Conclusão
 
+Como visto, há uma tendência de que o preço médio dos imóveis suba de acordo com o número de quartos até certo ponto. Chegando em 8 quartos, a tendência do preço é de queda. Um bom alvo seria imóveis de 5 a 8 quartos. 
+
+Falando em espaço interno, os dados apontam uma tendência que valida a crença de que quanto maior for, maior será o preço. Entretanto, levando em consideração que há um limite de aumento de preço causado pelo número de quartos do imóvel. O foco seria em imóveis grandes em espaço interno e não em quantidade de cômodos. Ou seja, imóveis amplos.
+
+Já o fator vista para a orla, é um fator relevante, já que estando em qualidade regular já supera o preço médio de imóveis sem vista para a orla mesmo sendo a vista de boa qualidade. Entretanto, um imóvel com uma vista ruim para a orla tem o preço médio inferior à um imóvel que tenha uma vista razoável ainda que não seja para a orla, e um preço médio bem próximo dos imóveis sem vista a orla e com qualidade ruim. Portanto, uma vista para a orla só passa a ser relevante se for razoável ou boa.
+
+Agora, sobre o modelo preditivo, vamos considerar a tabela abaixo: 
+
+
 ![Screenshot from 2022-04-30 13-14-53](https://user-images.githubusercontent.com/68928802/166113579-9f72527e-5572-465c-aac2-21c6b34ad48b.png)
 
-O que podemos notar olhando a tabela de variação percentual acima é que os preços previstos neste primeiro ciclo estão mais próximos do preço real do que a média utilizada. 
+O que podemos notar olhando a tabela de variação percentual é que os preços previstos neste primeiro ciclo estão mais próximos do preço real do que a média utilizada. 
 
-Sendo assim, a probabilidade de venda é muito maior utilizando o preço previsto do que a média, onde em alguns casos o preço sugerido seria 3 vezes mais alto do que valor do imóvel.
+Sendo assim, a probabilidade de venda é muito maior utilizando o preço previsto do que a média, onde em alguns casos o preço sugerido seria 3 vezes mais alto do que valor do imóvel. Um valor surreal, o que acarreta em uma venda improvável.
 
 ### Próximos Passos
 
